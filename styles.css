@@ -193,6 +193,11 @@ footer a:hover{
   opacity:1;
 }
 
+.heroIntro.is-holding-step-one .heroIntroStepOne{
+  opacity:1;
+  transition:none;
+}
+
 .heroIntro.is-step-one .heroIntroStepOne,
 .heroIntro.is-step-two .heroIntroStepTwo,
 .intro-sequence .heroIntro:not(.is-complete):not(.is-step-two) .heroIntroStepOne{
@@ -201,6 +206,7 @@ footer a:hover{
 
 .heroIntro.is-step-one .heroIntroFinal,
 .heroIntro.is-step-two .heroIntroFinal,
+.heroIntro.is-holding-step-one .heroIntroFinal,
 .intro-sequence .heroIntro:not(.is-complete):not(.is-step-two) .heroIntroFinal{
   opacity:0;
 }

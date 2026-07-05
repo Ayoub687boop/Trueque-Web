@@ -165,12 +165,13 @@
     let heroFallbackTimer;
     let heroIsPlaying = false;
     let heroHasLeftViewport = false;
+    const heroFirstFrameHold = 950;
 
     const showFinalHero = () => {
       if (heroIntro) {
         const stepTwo = heroIntro.querySelector('.heroIntroStepTwo');
         if (stepTwo) stepTwo.pause();
-        heroIntro.classList.remove('is-step-one','is-step-two');
+        heroIntro.classList.remove('is-step-one','is-step-two','is-holding-step-one');
         heroIntro.classList.add('is-complete');
       }
       heroIsPlaying = false;
@@ -194,11 +195,11 @@
       stepTwo.pause();
       stepTwo.currentTime = 0;
       heroIntro.classList.remove('is-complete','is-step-two');
-      heroIntro.classList.add('is-step-one');
+      heroIntro.classList.add('is-step-one','is-holding-step-one');
 
       const startStepTwo = () => {
         if (!heroIsPlaying) return;
-        heroIntro.classList.remove('is-step-one');
+        heroIntro.classList.remove('is-step-one','is-holding-step-one');
         heroIntro.classList.add('is-step-two');
 
         stepTwo.currentTime = 0;
@@ -207,7 +208,7 @@
         if (playRequest) playRequest.catch(showFinalHero);
       };
 
-      heroStepTimer = window.setTimeout(startStepTwo, 1400);
+      heroStepTimer = window.setTimeout(startStepTwo, heroFirstFrameHold);
     };
 
     if (heroIntro && !reduceMotion) {
