@@ -3,95 +3,260 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trueque — Swap, don't shop</title>
-  <meta name="description" content="Trueque is a new way to exchange items nearby. Swipe, match, and give products a second life." />
+  <title>Trueque — Trade instead of buy</title>
+  <meta name="description" content="Trueque helps you exchange products with people nearby and give items a second life." />
+  <script>
+    document.documentElement.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('intro-sequence');
+    }
+  </script>
+  <link rel="preload" as="image" href="assets/start-animation/1.png" />
+  <link rel="preload" as="image" href="assets/hero/Trueque3-hero.png" />
+  <link rel="preload" as="video" href="assets/start-animation/2.mp4" type="video/mp4" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="nav">
-    <div class="brand">
-      <div class="logo">T</div>
-      <span>Trueque</span>
+    <div class="navInner">
+      <a class="navBrand" href="#top" aria-label="Trueque home">
+        <img src="assets/Logo/Trueque Logo.png" alt="Trueque" />
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#how">How it works</a>
+        <a href="#why-trade">Why trade?</a>
+        <a href="#safety">Safety</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="navCta" href="mailto:support@trueque.space?subject=Join%20Early%20Access">Join Early Access</a>
     </div>
-    <nav>
-      <a href="#how">How it works</a>
-      <a href="#safety">Safety</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="heroText">
-        <p class="badge">Coming soon on iOS</p>
-        <h1>Swap, don't shop.</h1>
-        <p class="subtitle">Exchange the things you no longer use for things you’ll love. Trueque helps people nearby give items a second life.</p>
-        <div class="buttons">
-          <a class="primary" href="mailto:support@trueque.space">Contact us</a>
-          <a class="secondary" href="#how">See how it works</a>
-        </div>
-      </div>
-
-      <div class="phone">
-        <div class="screen">
-          <div class="topbar"></div>
-          <div class="card">
-            <div class="itemOrb"></div>
-            <h3>Vintage camera</h3>
-            <p>Nearby · Zaragoza</p>
-          </div>
-          <div class="swipeRow">
-            <span>✕</span><span>↔</span><span>✓</span>
-          </div>
-        </div>
+    <section id="top" class="hero">
+      <div class="heroIntro" data-hero-intro aria-hidden="true">
+        <img class="heroIntroMedia heroIntroFinal" src="assets/hero/Trueque3-hero.png" alt="" decoding="async" fetchpriority="high" />
+        <img class="heroIntroMedia heroIntroStep heroIntroStepOne" src="assets/start-animation/1.png" alt="" decoding="async" />
+        <video class="heroIntroMedia heroIntroStep heroIntroStepTwo" src="assets/start-animation/2.mp4" muted playsinline preload="auto"></video>
       </div>
     </section>
 
-    <section id="how" class="section">
-      <h2>How Trueque works</h2>
+    <section class="transitionIntro reveal" aria-labelledby="transition-title">
+      <h2 id="transition-title">Trade instead of buying.</h2>
+      <p>Exchange the things you no longer need<br />for the things you actually want.</p>
+    </section>
+
+    <section id="how" class="section how reveal">
+      <div class="howHeader">
+        <h2>How it works</h2>
+      </div>
       <div class="grid">
         <article>
-          <span>01</span>
-          <h3>Discover</h3>
-          <p>Browse items near you with a fast swipe experience.</p>
+          <div class="stepTitle"><span>1</span><h3>Discover</h3></div>
+          <p>Find nearby items.</p>
         </article>
         <article>
-          <span>02</span>
-          <h3>Match</h3>
-          <p>When both users are interested, a trade can begin.</p>
+          <div class="stepTitle"><span>2</span><h3>Match</h3></div>
+          <p>Both users agree.</p>
         </article>
         <article>
-          <span>03</span>
-          <h3>Exchange</h3>
-          <p>Agree on the details and give your items a new owner.</p>
+          <div class="stepTitle"><span>3</span><h3>Exchange</h3></div>
+          <p>Trade safely.</p>
         </article>
       </div>
     </section>
 
-    <section class="section dark">
+    <section id="why-trade" class="section dark reveal">
       <h2>Why trade?</h2>
       <div class="grid">
-        <article><h3>Save money</h3><p>Get value from what you already own.</p></article>
-        <article><h3>Reduce waste</h3><p>Help products live longer instead of being forgotten.</p></article>
-        <article><h3>Local first</h3><p>Start with nearby exchanges and real communities.</p></article>
+        <article>
+          <div class="cardIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 7v10M9.5 9.5c.7-.8 1.6-1.2 2.7-1.1 1.3.1 2.3.8 2.3 1.9 0 2.8-5 1.3-5 4.1 0 1.2 1.1 1.9 2.5 2 1.1.1 2.1-.3 2.8-1.1" />
+            </svg>
+          </div>
+          <h3>Save money</h3>
+          <p>Get value from what you already own.</p>
+        </article>
+        <article>
+          <div class="cardIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M19 4c-6.6.3-10.7 3.4-12.4 7.5-1.1 2.8-.7 5.3 1 6.9 1.6 1.6 4.2 1.9 6.9.8C18.5 17.5 21.6 13.4 22 7c-1.1.8-2.1 1.1-3 1-1-.1-1.7-.9-2-2-.1-.5.4-1.5 2-2Z" />
+              <path d="M6 20c2.3-4.7 5.5-7.8 10-10" />
+            </svg>
+          </div>
+          <h3>Reduce waste</h3>
+          <p>Help products live longer instead of being forgotten.</p>
+        </article>
+        <article>
+          <div class="cardIcon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" />
+              <circle cx="12" cy="10" r="2.4" />
+            </svg>
+          </div>
+          <h3>Local first</h3>
+          <p>Start with nearby exchanges and real communities.</p>
+        </article>
       </div>
     </section>
 
-    <section id="safety" class="section">
+    <section id="safety" class="section safety reveal">
       <h2>Built with safety in mind</h2>
       <p class="wide">Trueque is designed around user reports, moderation, reputation, and clear community rules. Our goal is to make exchanges simple, respectful, and transparent.</p>
     </section>
+
+    <section id="faq" class="section faq reveal">
+      <h2>FAQ</h2>
+      <div class="faqList">
+        <article>
+          <h3>When is Trueque launching?</h3>
+          <p>We are preparing early access for the first community of users.</p>
+        </article>
+        <article>
+          <h3>How do trades work?</h3>
+          <p>Users discover items nearby, match when both are interested, and agree on the exchange details.</p>
+        </article>
+        <article>
+          <h3>Is Trueque local?</h3>
+          <p>Yes. Trueque is designed around nearby exchanges and real communities.</p>
+        </article>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div class="brand small"><div class="logo">T</div><span>Trueque</span></div>
-    <div>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="community.html">Community Guidelines</a>
+    <div class="footerBrand">
+      <img src="assets/Logo/Trueque Logo.png" alt="Trueque" />
+    </div>
+    <div class="footerLinks">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="community.html">Community</a>
       <a href="mailto:support@trueque.space">Contact</a>
     </div>
   </footer>
+
+  <script>
+    const heroIntro = document.querySelector('[data-hero-intro]');
+    const heroSection = document.querySelector('#top');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let heroStepTimer;
+    let heroFallbackTimer;
+    let heroIsPlaying = false;
+    let heroHasLeftViewport = false;
+
+    const showFinalHero = () => {
+      if (heroIntro) {
+        const stepTwo = heroIntro.querySelector('.heroIntroStepTwo');
+        if (stepTwo) stepTwo.pause();
+        heroIntro.classList.remove('is-step-one','is-step-two');
+        heroIntro.classList.add('is-complete');
+      }
+      heroIsPlaying = false;
+      window.clearTimeout(heroStepTimer);
+      window.clearTimeout(heroFallbackTimer);
+    };
+
+    const playHeroIntro = () => {
+      if (!heroIntro || reduceMotion || heroIsPlaying) return;
+
+      const stepOne = heroIntro.querySelector('.heroIntroStepOne');
+      const stepTwo = heroIntro.querySelector('.heroIntroStepTwo');
+      if (!stepOne || !stepTwo) {
+        showFinalHero();
+        return;
+      }
+
+      heroIsPlaying = true;
+      window.clearTimeout(heroStepTimer);
+      window.clearTimeout(heroFallbackTimer);
+      stepTwo.pause();
+      stepTwo.currentTime = 0;
+      heroIntro.classList.remove('is-complete','is-step-two');
+      heroIntro.classList.add('is-step-one');
+
+      const startStepTwo = () => {
+        if (!heroIsPlaying) return;
+        heroIntro.classList.remove('is-step-one');
+        heroIntro.classList.add('is-step-two');
+
+        stepTwo.currentTime = 0;
+        heroFallbackTimer = window.setTimeout(showFinalHero, 9000);
+        const playRequest = stepTwo.play();
+        if (playRequest) playRequest.catch(showFinalHero);
+      };
+
+      heroStepTimer = window.setTimeout(startStepTwo, 1400);
+    };
+
+    if (heroIntro && !reduceMotion) {
+      const stepOne = heroIntro.querySelector('.heroIntroStepOne');
+      const stepTwo = heroIntro.querySelector('.heroIntroStepTwo');
+      if (stepOne) stepOne.addEventListener('error', showFinalHero);
+      if (stepTwo) {
+        stepTwo.addEventListener('ended', showFinalHero);
+        stepTwo.addEventListener('error', showFinalHero);
+      }
+
+      playHeroIntro();
+    } else {
+      showFinalHero();
+    }
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const siteNav = document.querySelector('.nav');
+    const updateNav = () => {
+      if (siteNav) siteNav.classList.toggle('scrolled', window.scrollY > 12);
+    };
+    const centeredNavTargets = new Set(['why-trade','safety','faq']);
+
+    document.querySelectorAll('.nav a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        if (centeredNavTargets.has(targetId)) {
+          event.preventDefault();
+          target.scrollIntoView({ behavior:'smooth', block:'center' });
+        }
+      });
+    });
+
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.18 });
+
+      revealItems.forEach((item) => observer.observe(item));
+
+      if (heroSection && heroIntro && !reduceMotion) {
+        const heroReplayObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (heroHasLeftViewport && !heroIsPlaying) {
+                heroHasLeftViewport = false;
+                playHeroIntro();
+              }
+            } else {
+              heroHasLeftViewport = true;
+            }
+          });
+        }, { threshold:0.2 });
+
+        heroReplayObserver.observe(heroSection);
+      }
+    } else {
+      revealItems.forEach((item) => item.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>
